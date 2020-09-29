@@ -5,7 +5,7 @@ android {
     compileSdkVersion 25
     defaultConfig {
         applicationId "com.jsbd.btphone"
-        minSdkVersion 23
+        minSdkVersion 22
         targetSdkVersion 25
 //        multiDexEnabled true
         versionCode getSelfDefinedVersion("code")

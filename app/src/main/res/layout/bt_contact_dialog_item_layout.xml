@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_contact_dialog_item"
+    android:layout_width="@dimen/px_560"
+    android:layout_height="@dimen/px_64">
+
+    <View
+        android:id="@+id/dialog_line_one"
+        android:layout_width="@dimen/px_560"
+        android:layout_height="0.1px"
+        android:background="@mipmap/bt_cantact_dialog_item_line"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/tv_number_type"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/px_64"
+        android:layout_marginLeft="30px"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:maxEms="10"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="@color/color_stytle_2"
+        android:textSize="@dimen/bt_font_size_1"
+        app:layout_constraintLeft_toRightOf="@id/iv_device_pic" />
+
+    <TextView
+        android:id="@+id/tv_match_number"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/px_64"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:maxEms="15"
+        android:padding="3dp"
+        android:singleLine="true"
+        android:text="18651135885"
+        android:textColor="@color/color_stytle_2"
+        android:textSize="@dimen/bt_font_size_1"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <View
+        android:id="@+id/dialog_line_two"
+        android:layout_width="@dimen/px_560"
+        android:layout_height="0.1px"
+        android:background="@mipmap/bt_cantact_dialog_item_line"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

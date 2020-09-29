@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/px_960"
+    android:layout_height="@dimen/px_504"
+    android:paddingTop="@dimen/px_6">
+
+    <EditText
+        android:id="@+id/et_search"
+        android:layout_width="624px"
+        android:layout_height="48px"
+        android:background="@mipmap/contact_search_bg"
+        android:hint="@string/bt_contact_search_hint"
+        android:imeOptions="flagNoExtractUi|flagNoFullscreen|actionSearch"
+        android:maxLength="20"
+        android:singleLine="true"
+        android:textSize="@dimen/bt_font_size_1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bt_search"
+        android:layout_width="150px"
+        android:layout_height="48px"
+        android:layout_marginLeft="18px"
+        android:adjustViewBounds="true"
+        android:background="@drawable/bt_search_or_sync_btn_image"
+        android:drawableLeft="@mipmap/bt_search_button_image"
+        android:drawablePadding="10dp"
+        android:gravity="left|center_vertical"
+        android:includeFontPadding="false"
+        android:paddingLeft="16dp"
+        android:text="@string/bt_contact_search_button_hint"
+        android:textColor="@color/bt_font_stytle"
+        android:textSize="@dimen/bt_font_size_1"
+        app:layout_constraintLeft_toRightOf="@+id/et_search"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/bt_sync"
+        android:layout_width="150px"
+        android:layout_height="48px"
+        android:layout_marginLeft="18px"
+        android:adjustViewBounds="true"
+        android:background="@drawable/bt_search_or_sync_btn_image"
+        android:drawableLeft="@mipmap/bt_sync_button_image"
+        android:drawablePadding="10dp"
+        android:gravity="left|center_vertical"
+        android:includeFontPadding="false"
+        android:paddingLeft="16dp"
+        android:text="@string/bt_contact_sync_button_hint"
+        android:textColor="@color/bt_font_stytle"
+        android:textSize="@dimen/bt_font_size_1"
+        app:layout_constraintLeft_toRightOf="@+id/bt_search"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/rv_bt_cantact_list"
+        android:layout_width="960px"
+        android:layout_height="416px"
+        android:layout_marginTop="28px"
+        android:divider="@null"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"></ListView>
+
+</android.support.constraint.ConstraintLayout>

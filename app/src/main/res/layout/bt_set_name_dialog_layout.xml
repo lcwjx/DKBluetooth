@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="@dimen/px_620"
+    android:layout_height="@dimen/px_280"
+    android:background="@mipmap/bt_set_name_dialog_bg">
+
+    <TextView
+        android:id="@+id/dialoghint"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/px_54"
+        android:layout_marginBottom="@dimen/px_60"
+        android:layout_marginLeft="@dimen/px_72"
+        android:layout_marginRight="@dimen/px_24"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:text="@string/bt_dialog_name_hint"
+        android:textColor="@color/color_stytle_2"
+        android:textSize="@dimen/bt_font_size_1"
+        app:layout_constraintBottom_toTopOf="@+id/bt_cancel"
+        app:layout_constraintRight_toLeftOf="@+id/et_name" />
+
+    <EditText
+        android:id="@+id/et_name"
+        android:layout_width="@dimen/px_400"
+        android:layout_height="@dimen/px_60"
+        android:layout_marginBottom="@dimen/px_60"
+        android:layout_marginRight="@dimen/px_70"
+        android:background="@mipmap/bt_set_name_dialog_edittext_bg"
+        android:textColor="@color/color_a70_stytle"
+        android:textCursorDrawable="@null"
+        android:textSize="@dimen/bt_font_size_1"
+        app:layout_constraintBottom_toTopOf="@+id/bt_cancel"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <Button
+        android:id="@+id/bt_delete"
+        android:layout_width="@dimen/px_30"
+        android:layout_height="@dimen/px_30"
+        android:layout_marginRight="@dimen/px_8"
+        android:background="@drawable/bt_set_name_dialog_delete_image"
+        app:layout_constraintBottom_toBottomOf="@id/et_name"
+        app:layout_constraintRight_toRightOf="@id/et_name"
+        app:layout_constraintTop_toTopOf="@id/et_name" />
+
+    <Button
+        android:id="@+id/bt_cancel"
+        android:layout_width="@dimen/px_224"
+        android:layout_height="@dimen/px_64"
+        android:layout_marginBottom="@dimen/px_32"
+        android:layout_marginLeft="@dimen/px_76"
+        android:background="@drawable/bt_set_name_dialog_button_image"
+        android:text="@string/bt_dialog_cancel_button"
+        android:textColor="@color/bt_dialog_text_selector_style"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <Button
+        android:id="@+id/bt_ok"
+        android:layout_width="@dimen/px_224"
+        android:layout_height="@dimen/px_64"
+        android:layout_marginLeft="@dimen/px_20"
+        android:background="@drawable/bt_set_name_dialog_button_image"
+        android:text="@string/bt_dialog_ok_button"
+        android:textColor="@color/bt_dialog_text_selector_style"
+        app:layout_constraintLeft_toRightOf="@+id/bt_cancel"
+        app:layout_constraintTop_toBottomOf="@+id/et_name"
+        app:layout_constraintTop_toTopOf="@+id/bt_cancel" />
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_bt_contact_item"
+    android:layout_width="@dimen/px_960"
+    android:layout_height="@dimen/px_82"
+    android:background="@drawable/bt_item_bg_image"
+    android:clickable="true">
+
+    <View
+        android:id="@+id/view_one"
+        android:layout_width="@dimen/px_960"
+        android:layout_height="1px"
+        android:background="@mipmap/bt_callhistory_item_line"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <View
+        android:id="@+id/view_two"
+        android:layout_width="884px"
+        android:layout_height="1px"
+        android:background="@mipmap/bt_callhistory_item_line2"
+        android:visibility="gone"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_initials"
+        android:layout_width="44px"
+        android:layout_height="@dimen/px_82"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:text=""
+        android:textColor="@color/bt_font_stytle_one"
+        android:textSize="@dimen/bt_font_size_2"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/iv_contact_name"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/px_82"
+        android:layout_marginLeft="@dimen/px_50"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:maxEms="24"
+        android:singleLine="true"
+        android:text=""
+        android:textSize="@dimen/bt_font_size_1"
+        app:layout_constraintLeft_toRightOf="@+id/tv_initials" />
+
+    <TextView
+        android:id="@+id/tv_contact_number"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/px_82"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:maxEms="24"
+        android:singleLine="true"
+        android:text=""
+        android:textSize="@dimen/bt_font_size_1"
+        app:layout_constraintRight_toRightOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,55 @@
+<resources>
+    <string name="app_name">BT Phone</string>
+    <!--蓝牙联系人界面-->
+    <string name="bt_contact_search_hint">Please enter name or number</string>
+    <string name="bt_contact_search_button_hint">Search</string>
+    <string name="bt_contact_sync_button_hint">Sync</string>
+
+    <!--蓝牙设备界面-->
+    <string name="bt_set_name_null_prompt">Input cannot be empty</string>
+    <string name="bt_unknown_device">Unknown device</string>
+    <string name="bt_set_radiogroup_available_text">Available Device</string>
+    <string name="bt_set_radiogroup_pair_text">Paired Device</string>
+    <string name="bt_set_cur_pair_device">""</string>
+    <string name="bt_set_bt_switch_text">Bluetooth Switch</string>
+    <string name="bt_set_bt_name_hint">Local Name</string>
+    <string name="bt_set_bt_name_show">EV400</string>
+    <string name="bt_bt_device_status_not_onnected">Not Connected</string>
+    <string name="bt_bt_device_status_connecting">Connecting</string>
+    <string name="bt_bt_pair_device_status_connected">Connected</string>
+    <string name="bt_bt_pair_device_status_paired">Bonded</string>
+    <string name="bt_bt_set_name_prompt">If the input cannot be empty</string>
+    <string name="bt_bt_swtich_oning">Bluetooth is ON...</string>
+    <string name="bt_bt_swtich_offing">Bluetooth is OFF...</string>
+    <string name="bt_bt_available_device_list_status_refresh">Search</string>
+    <string name="bt_bt_available_device_list_status_scaning">Searching..</string>
+    <string name="bt_bt_available_device_list_status_hint">Please turn on the Bluetooth switch first</string>
+    <string name="bt_set_available_device_status">iPhoneX</string>
+
+    <string name="bt_contacts_sync_loading_status">Syncing</string>
+    <string name="bt_contacts_sync_loaded_status">Sync Complete</string>
+    <string name="bt_set_connection_device_hint">Do I need to connect a Bluetooth device?</string>
+    <string name="bt_set_disconnect_device_hint">Do I need to disconnect my Bluetooth device?</string>
+    <string name="bt_set_remove_device_hint">Whether to delete a paired Bluetooth device?</string>
+    <string name="bt_call_unknown_number_hint">unknown number</string>
+    <string name="bt_set_bt_name_dialog_hint">Name</string>
+    <string name="bt_set_bluetooth_pairing_request">Bluetooth pairing request</string>
+    <string name="bt_set_bt_pairing_code">Pairing code:</string>
+    <string name="bt_call_status_1">Call...</string>
+    <string name="bt_call_status_2">Calling...</string>
+    <string name="bt_pbap_conn_success">read access permission has been successfully obtained! you can download contact now!</string>
+    <string name="bt_pbap_conn_prompt">Please make sure the device has read access permission！Or remove the current device to reconnect！</string>
+    <string name="bt_pbap_downloading_calllog">Syncing calllog，please wait</string>
+    <string name="bt_contact_numbertype_1">Mobile:</string>
+    <string name="bt_contact_numbertype_2">Work:</string>
+    <string name="bt_contact_numbertype_3">Family:</string>
+    <string name="bt_contact_numbertype_4">Other:</string>
+    <string name="bt_dialog_cancel_button">Cancel</string>
+    <string name="bt_dialog_ok_button">OK</string>
+    <string name="bt_dialog_name_hint">Name:</string>
+
+    <string name="bt_hide_keyboard">Hide</string>
+
+    <string name="float_window_tip_touch_back_bt">Tap to return to the call&#160;&#160;&#160;</string>
+
+</resources>

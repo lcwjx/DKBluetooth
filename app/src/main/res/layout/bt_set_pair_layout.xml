@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/px_960"
+    android:layout_height="@dimen/px_504"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <TextView
+        android:includeFontPadding="false"
+        android:id="@+id/tv_old_pair_devices"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/px_82"
+        android:drawablePadding="@dimen/px_20"
+        android:gravity="center_vertical"
+        android:text="@string/bt_set_radiogroup_pair_text"
+        android:textColor="#ffffffff"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="parent" />
+
+    <View
+        app:layout_constraintTop_toBottomOf="@+id/tv_old_pair_devices"
+        android:layout_width="@dimen/px_960"
+        android:layout_height="@dimen/px_1"
+        android:background="#FFFFFE"
+        />
+
+    <ListView
+        app:layout_constraintTop_toBottomOf="@+id/tv_old_pair_devices"
+        android:id="@+id/bt_pair_device_list"
+        android:layout_width="@dimen/px_960"
+        android:layout_height="@dimen/px_417"
+        android:divider="@mipmap/bt_contact_listview_divider"
+        android:fadingEdge="none"
+        android:listSelector="@android:color/transparent"
+        android:scrollingCache="false">
+    </ListView>
+
+
+</android.support.constraint.ConstraintLayout>

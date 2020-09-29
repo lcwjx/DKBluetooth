@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingRight="@dimen/px_80"
+    android:layout_marginLeft="@dimen/px_80"
+    android:fitsSystemWindows="true">
+
+    <com.jsbd.btphone.module.view.NoScrollViewPager
+        android:id="@+id/vp_viewpage"
+        android:layout_width="@dimen/px_960"
+        android:layout_height="@dimen/px_504"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <RadioGroup
+        android:gravity="center"
+        android:layout_marginBottom="@dimen/px_56"
+        android:id="@+id/rg_bt_tab_list"
+        android:layout_width="@dimen/px_960"
+        android:layout_height="@dimen/px_88"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <RadioButton
+            android:id="@+id/rb_bt_set"
+            style="@style/bt_Bottom_radioButton_style"
+            android:background="@drawable/bt_tab_set_highlight_image" />
+
+        <RadioButton
+            android:layout_marginStart="@dimen/px_18"
+            android:id="@+id/rb_bt_dial"
+            style="@style/bt_Bottom_radioButton_style"
+            android:background="@drawable/bt_tab_dial_highlight_image" />
+
+        <RadioButton
+            android:layout_marginStart="@dimen/px_18"
+            android:id="@+id/rb_bt_calllog"
+            style="@style/bt_Bottom_radioButton_style"
+            android:background="@drawable/bt_tab_callhistory_highlight_image" />
+
+        <RadioButton
+            android:layout_marginStart="@dimen/px_18"
+            android:id="@+id/rb_bt_contact"
+            style="@style/bt_Bottom_radioButton_style"
+            android:background="@drawable/bt_tab_contact_highlight_image" />
+
+    </RadioGroup>
+</android.support.constraint.ConstraintLayout>

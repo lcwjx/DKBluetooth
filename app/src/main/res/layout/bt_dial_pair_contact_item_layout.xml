@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cl_bt_dial_pair_contact_item"
+    android:layout_width="@dimen/px_402"
+    android:layout_height="@dimen/px_88"
+    android:background="@drawable/bt_dial_contact_item_bg_image"
+    android:clickable="true">
+
+    <TextView
+        android:id="@+id/iv_dail_pair_contact_name"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/px_88"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:maxEms="10"
+        android:singleLine="true"
+        android:text=""
+        android:textSize="@dimen/bt_font_size_1" />
+
+    <TextView
+        android:id="@+id/tv_dial_pair_contact_number"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/px_88"
+        android:ellipsize="end"
+        android:gravity="center_vertical"
+        android:includeFontPadding="false"
+        android:maxEms="12"
+        android:singleLine="true"
+        android:text=""
+        android:textSize="@dimen/bt_font_size_1"
+        app:layout_constraintRight_toRightOf="parent" />
+    <!--<View-->
+    <!--android:background="@color/bt_set_line_color_a30_stytle"-->
+    <!--app:layout_constraintBottom_toBottomOf="parent"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="@dimen/px_1"/>-->
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="transparent">#00000000</color>
+    <color name="color_stytle_1">#FFFFFF</color>
+    <color name="color_stytle_2">#000000</color>
+    <color name="color_a70_stytle">#B3000000 </color>
+
+    <!--设置-->
+    <color name="bt_set_available_device_item_a50_stytle">#80FFFFFF</color>
+    <color name="bt_set_line_color_a40_stytle">#66FFFFFE</color>
+    <color name="bt_set_line_color_a30_stytle">#4DFFFFFE</color>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="bt_set_device_button_down">#FF8400</color>
+    <color name="bt_top_dialog_text">#DBDBDB</color>
+    <color name="bt_font_stytle">#FFFFFF</color>
+    <color name="bt_font_stytle_one">#3EA72D</color>
+    <color name="bt_switch_small_circle_left_color">#E9E9E9</color>
+    <color name="bt_switch_small_circle_left_color_a50">#00E9E9E9</color>
+    <color name="bt_switch_small_circle_rifht_color">#E9E9E9</color>
+    <color name="bt_switch_big_circle_left_color">#516372</color>
+    <color name="bt_switch_big_circle_rifht_color">#3EA72D</color>
+    <color name="bt_callhistory_item_font_color">#FFFEFE</color>
+    <color name="bt_callhistory_item_font_a50_stytle_color">#80FFFEFE</color>
+    <color name="bt_callhistory_item_bg_color">#00150A00</color>
+    <color name="bt_contact_initials_color">#FF8400</color>
+    <color name="bt_contact_bottom_line_color">#2B1E12</color>
+    <color name="black_overlay">#66000000</color>
+
+</resources>

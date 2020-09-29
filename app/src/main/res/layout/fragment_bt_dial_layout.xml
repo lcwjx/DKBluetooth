@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/px_960"
+    android:layout_height="@dimen/px_504"
+    android:paddingRight="@dimen/px_8"
+    android:paddingTop="@dimen/px_34">
+
+    <ImageView
+        android:id="@+id/key_one"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:clickable="true"
+        android:src="@drawable/bt_key_one_image"
+        android:tag="1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/key_two"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_54"
+        android:clickable="true"
+        android:src="@drawable/bt_key_two_image"
+        android:tag="2"
+        app:layout_constraintLeft_toRightOf="@id/key_one"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/key_three"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_56"
+        android:clickable="true"
+        android:src="@drawable/bt_key_three_image"
+        android:tag="3"
+        app:layout_constraintLeft_toRightOf="@id/key_two"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/key_four"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginTop="@dimen/px_36"
+        android:clickable="true"
+        android:src="@drawable/bt_key_four_image"
+        android:tag="4"
+        app:layout_constraintTop_toBottomOf="@id/key_one" />
+
+    <ImageView
+        android:id="@+id/key_five"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_54"
+        android:layout_marginTop="@dimen/px_36"
+        android:clickable="true"
+        android:src="@drawable/bt_key_five_image"
+        android:tag="5"
+        app:layout_constraintLeft_toRightOf="@id/key_four"
+        app:layout_constraintTop_toBottomOf="@id/key_two" />
+
+    <ImageView
+        android:id="@+id/key_six"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_56"
+        android:layout_marginTop="@dimen/px_36"
+        android:clickable="true"
+        android:src="@drawable/bt_key_six_image"
+        android:tag="6"
+        app:layout_constraintLeft_toRightOf="@id/key_five"
+        app:layout_constraintTop_toBottomOf="@id/key_three" />
+
+    <ImageView
+        android:id="@+id/key_seven"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginTop="@dimen/px_36"
+        android:clickable="true"
+        android:src="@drawable/bt_key_seven_image"
+        android:tag="7"
+        app:layout_constraintTop_toBottomOf="@id/key_four" />
+
+    <ImageView
+        android:id="@+id/key_eight"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_54"
+        android:layout_marginTop="@dimen/px_36"
+        android:clickable="true"
+        android:src="@drawable/bt_key_eight_image"
+        android:tag="8"
+        app:layout_constraintLeft_toRightOf="@id/key_seven"
+        app:layout_constraintTop_toBottomOf="@id/key_five" />
+
+    <ImageView
+        android:id="@+id/key_nine"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_56"
+        android:layout_marginTop="@dimen/px_36"
+        android:clickable="true"
+        android:src="@drawable/bt_key_nine_image"
+        android:tag="9"
+        app:layout_constraintLeft_toRightOf="@id/key_eight"
+        app:layout_constraintTop_toBottomOf="@id/key_six" />
+
+    <ImageView
+        android:id="@+id/key_star"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginTop="@dimen/px_36"
+        android:clickable="true"
+        android:src="@drawable/bt_key_star_image"
+        android:tag="*"
+        app:layout_constraintTop_toBottomOf="@id/key_seven" />
+
+    <ImageView
+        android:id="@+id/key_zero"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_54"
+        android:layout_marginTop="@dimen/px_36"
+        android:clickable="true"
+        android:src="@drawable/bt_key_zero_image"
+        android:tag="0"
+        app:layout_constraintLeft_toRightOf="@id/key_star"
+        app:layout_constraintTop_toBottomOf="@id/key_nine" />
+
+    <ImageView
+        android:id="@+id/key_pound"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_56"
+        android:layout_marginTop="@dimen/px_36"
+        android:clickable="true"
+        android:src="@drawable/bt_key_pound_image"
+        android:tag="#"
+        app:layout_constraintLeft_toRightOf="@id/key_zero"
+        app:layout_constraintTop_toBottomOf="@id/key_nine" />
+
+    <ImageView
+        android:id="@+id/iv_delete"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_56"
+        android:layout_marginRight="@dimen/px_64"
+        android:layout_marginTop="@dimen/px_78"
+        android:clickable="true"
+        android:src="@drawable/bt_key_delete_image"
+        app:layout_constraintLeft_toRightOf="@id/key_three"
+        app:layout_constraintRight_toLeftOf="@id/tv_telephone_number"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/iv_call"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_56"
+        android:layout_marginRight="@dimen/px_68"
+        android:layout_marginTop="@dimen/px_98"
+        android:clickable="true"
+        android:src="@drawable/bt_key_call_image"
+        app:layout_constraintLeft_toRightOf="@id/key_three"
+        app:layout_constraintRight_toLeftOf="@id/tv_telephone_number"
+        app:layout_constraintTop_toBottomOf="@+id/iv_delete" />
+
+    <TextView
+        android:id="@+id/tv_telephone_number"
+        android:layout_width="@dimen/px_402"
+        android:layout_height="@dimen/px_76"
+        android:background="@mipmap/telephone_number_bottom_image"
+        android:ellipsize="start"
+        android:gravity="right|center_vertical"
+        android:inputType="phone"
+        android:phoneNumber="true"
+        android:singleLine="true"
+        android:text=""
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="@color/bt_font_stytle"
+        android:textSize="@dimen/bt_font_size_3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ListView
+        android:id="@+id/recycler_dial_pair_contact_list"
+        android:layout_width="@dimen/px_402"
+        android:layout_height="@dimen/px_360"
+        android:divider="@mipmap/bt_contact_listview_divider"
+        android:dividerHeight="0.1dp"
+        android:fadingEdge="none"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none"
+        android:scrollingCache="false"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_telephone_number"></ListView>
+</android.support.constraint.ConstraintLayout>

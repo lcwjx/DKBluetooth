@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/px_1120"
+    android:layout_height="@dimen/px_648">
+
+    <TextView
+        android:id="@+id/tv_incall_user_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/px_32"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:maxWidth="@dimen/px_714"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="@color/color_stytle_1"
+        android:textSize="@dimen/bt_font_size_5"
+        app:layout_constraintBottom_toTopOf="@id/tv_incall_user_number"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_incall_user_number"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/px_108"
+        android:ellipsize="end"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="@color/color_stytle_1"
+        android:textSize="@dimen/bt_font_size_4"
+        app:layout_constraintBottom_toTopOf="@id/tv_incall_duration" />
+
+    <TextView
+        android:id="@+id/tv_incall_duration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/px_78"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:text=""
+        android:textColor="@color/bt_set_available_device_item_a50_stytle"
+        android:textSize="@dimen/bt_font_size_2"
+        app:layout_constraintBottom_toTopOf="@+id/ll_call_key" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_call_key"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/px_120"
+        android:layout_marginBottom="@dimen/px_58"
+        android:gravity="center"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/iv_hang_up"
+            android:layout_width="@dimen/px_120"
+            android:layout_height="@dimen/px_120"
+            android:layout_marginRight="@dimen/px_78"
+            android:background="@null"
+            android:clickable="true"
+            android:src="@drawable/bt_incall_hang_up_image" />
+
+        <ImageView
+            android:id="@+id/iv_mute"
+            android:layout_width="@dimen/px_120"
+            android:layout_height="@dimen/px_120"
+            android:layout_marginRight="@dimen/px_78"
+            android:background="@null"
+            android:clickable="true"
+            android:src="@drawable/bt_incall_mute_image" />
+
+        <ImageView
+            android:id="@+id/iv_answer"
+            android:layout_width="@dimen/px_120"
+            android:layout_height="@dimen/px_120"
+            android:background="@null"
+            android:clickable="true"
+            android:src="@drawable/bt_incall_answer_image" />
+
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

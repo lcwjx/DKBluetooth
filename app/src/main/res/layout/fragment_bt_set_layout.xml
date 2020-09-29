@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scrollView"
+    android:layout_width="@dimen/px_960"
+    android:layout_height="match_parent"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+        <!-- 设置界面-->
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_bt_switch"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt_item_bg_image">
+
+            <TextView
+                android:id="@+id/tv_bt_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/px_80"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:text="@string/bt_set_bt_switch_text"
+                android:textColor="@color/bt_font_stytle"
+                android:textSize="@dimen/bt_font_size_1"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.jsbd.btphone.module.view.SwitchButton
+                android:id="@+id/bsb_bt_swtich"
+                android:layout_width="84px"
+                android:layout_height="42px"
+                android:layout_marginBottom="14px"
+                android:layout_marginTop="26px"
+                android:background="@null"
+                android:gravity="center_vertical"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_bt_switch" />
+
+            <View
+                android:layout_width="@dimen/px_960"
+                android:layout_height="@dimen/px_1"
+                android:background="@mipmap/bt_contact_listview_divider"
+                app:layout_constraintTop_toBottomOf="@+id/tv_bt_switch" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_bt_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt_item_bg_image"
+            app:layout_constraintTop_toBottomOf="@+id/cl_bt_switch">
+
+            <TextView
+                android:id="@+id/tv_bt_name_hint"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/px_82"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:text="@string/bt_set_bt_name_hint"
+                android:textColor="@color/bt_font_stytle"
+                android:textSize="@dimen/bt_font_size_1" />
+
+            <TextView
+                android:id="@+id/tv_bt_name"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/px_82"
+                android:drawablePadding="50px"
+                android:drawableRight="@mipmap/bt_method_entry_image"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:maxEms="24"
+                android:singleLine="true"
+                android:text="@string/bt_set_bt_name_show"
+                android:textColor="@color/bt_set_available_device_item_a50_stytle"
+                android:textSize="@dimen/bt_font_size_1"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tv_bt_name_hint" />
+
+            <View
+                android:layout_width="@dimen/px_960"
+                android:layout_height="@dimen/px_1"
+                android:background="@mipmap/bt_contact_listview_divider"
+                app:layout_constraintTop_toBottomOf="@+id/tv_bt_name_hint" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_bt_pair_device"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt_item_bg_image"
+            app:layout_constraintTop_toBottomOf="@+id/cl_bt_name">
+
+            <TextView
+                android:id="@+id/tv_pair_device"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/px_82"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:text="@string/bt_set_radiogroup_pair_text"
+                android:textColor="@color/bt_font_stytle"
+                android:textSize="@dimen/bt_font_size_1" />
+
+            <ImageView
+                android:id="@+id/iv_deiver_conn_pic"
+                android:layout_width="@dimen/px_30"
+                android:layout_height="@dimen/px_16"
+                android:layout_marginBottom="@dimen/px_30"
+                android:layout_marginRight="@dimen/px_20"
+                android:layout_marginTop="@dimen/px_36"
+                android:src="@mipmap/bt_set_curpair_device_logo"
+                android:visibility="gone"
+                app:layout_constraintRight_toLeftOf="@+id/tv_cur_pair_device"
+                app:layout_constraintTop_toTopOf="@+id/tv_pair_device" />
+
+            <TextView
+                android:id="@+id/tv_cur_pair_device"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/px_82"
+                android:ellipsize="end"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:maxEms="24"
+                android:singleLine="true"
+                android:textColor="@color/bt_font_stytle_one"
+                android:textSize="@dimen/bt_font_size_1"
+                android:visibility="gone"
+                app:layout_constraintRight_toLeftOf="@+id/tv_open_pair_device_list" />
+
+            <TextView
+                android:id="@+id/tv_open_pair_device_list"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/px_82"
+                android:drawablePadding="@dimen/px_50"
+                android:drawableRight="@mipmap/bt_method_entry_image"
+                android:gravity="center_vertical"
+                android:includeFontPadding="false"
+                android:textColor="@color/bt_font_stytle"
+                android:textSize="@dimen/bt_font_size_1"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <View
+                android:id="@+id/pair_or_available_dividing_line"
+                android:layout_width="@dimen/px_960"
+                android:layout_height="@dimen/px_1"
+                android:background="@mipmap/bt_contact_listview_divider"
+                app:layout_constraintTop_toBottomOf="@+id/tv_pair_device" />
+        </android.support.constraint.ConstraintLayout>
+
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/cl_bt_available_device"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bt_item_bg_image"
+            app:layout_constraintTop_toBottomOf="@+id/cl_bt_pair_device">
+
+            <TextView
+                android:id="@+id/tv_available_device"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/px_82"
+                android:gravity="center_vertical"
+                android:text="@string/bt_set_radiogroup_available_text"
+                android:textColor="@color/bt_font_stytle"
+                android:textSize="@dimen/bt_font_size_1" />
+
+            <TextView
+                android:id="@+id/tv_available_device_list_stauts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minWidth="@dimen/px_85"
+                android:gravity="center"
+                android:includeFontPadding="false"
+                android:text="@string/bt_bt_available_device_list_status_refresh"
+                android:background="@mipmap/bt_search_device_image"
+                android:textColor="@color/bt_font_stytle"
+                android:textSize="@dimen/bt_font_size_1"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintRight_toRightOf="parent" />
+
+            <View
+                android:id="@+id/available_or_list_dividing_line"
+                android:layout_width="@dimen/px_960"
+                android:layout_height="@dimen/px_1"
+                android:background="@mipmap/bt_contact_listview_divider"
+                app:layout_constraintTop_toBottomOf="@+id/tv_available_device" />
+        </android.support.constraint.ConstraintLayout>
+
+        <com.jsbd.btphone.module.view.NoScrollListView
+            android:id="@+id/bt_available_device_list"
+            android:layout_width="@dimen/px_960"
+            android:layout_height="match_parent"
+            android:fadingEdge="none"
+            android:listSelector="@android:color/transparent"
+            android:scrollbars="none"
+            android:scrollingCache="false"
+            app:layout_constraintTop_toBottomOf="@+id/cl_bt_available_device">
+
+        </com.jsbd.btphone.module.view.NoScrollListView>
+    </LinearLayout>
+
+</ScrollView>

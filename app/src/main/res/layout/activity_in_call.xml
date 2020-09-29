@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true">
+
+    <!--来电界面-->
+    <include
+        android:id="@+id/incoming_layout"
+        layout="@layout/bt_incoming_call_layout"
+        android:visibility="gone" />
+
+    <!--通话中或者去电-->
+    <include
+        android:id="@+id/outgoing_and_talking_layout"
+        layout="@layout/bt_call_or_go_to_call_laytou"
+        android:visibility="visible" />
+
+    <!--显示按键界面-->
+    <include
+        android:id="@+id/include_keyboard_show"
+        layout="@layout/bt_call_keyboard_show_layout"
+        android:visibility="gone"></include>
+
+</FrameLayout>

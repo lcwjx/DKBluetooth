@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/px_620"
+    android:layout_height="@dimen/px_320"
+    android:background="@mipmap/bt_contact_dialog_bg"
+    android:paddingLeft="@dimen/px_32"
+    android:paddingRight="@dimen/px_30">
+
+    <ImageView
+        android:id="@+id/iv_user_pic"
+        android:layout_width="@dimen/px_40"
+        android:layout_height="@dimen/px_40"
+        android:layout_marginBottom="@dimen/px_22"
+        android:layout_marginRight="@dimen/px_16"
+        android:layout_marginTop="@dimen/px_22"
+        android:gravity="center"
+        android:src="@mipmap/bt_contact_dialog_pic"
+        app:layout_constraintRight_toLeftOf="@+id/tv_curr_user"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_curr_user"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/px_40"
+        android:ellipsize="marquee"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:marqueeRepeatLimit="marquee_forever"
+        android:maxWidth="@dimen/px_350"
+        android:singleLine="true"
+        android:text=""
+        android:textColor="@color/color_stytle_2"
+        android:textSize="@dimen/bt_font_size_6"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/iv_user_pic" />
+
+    <ListView
+        android:id="@+id/lv_contact_number_list"
+        android:layout_width="@dimen/px_560"
+        android:layout_height="@dimen/px_194"
+        android:layout_marginBottom="@dimen/px_40"
+        android:layout_marginRight="@dimen/px_32"
+        android:cacheColorHint="@color/transparent"
+        android:divider="@null"
+        android:listSelector="@android:color/transparent"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tv_curr_user">
+
+    </ListView>
+
+
+</android.support.constraint.ConstraintLayout>

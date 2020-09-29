@@ -1,0 +1,53 @@
+<resources>
+    <string name="app_name">电话</string>
+    <!--蓝牙联系人界面-->
+    <string name="bt_contact_search_hint">请输入姓名或电话号码</string>
+    <string name="bt_contact_search_button_hint">搜索</string>
+    <string name="bt_contact_sync_button_hint">同步</string>
+    <!--蓝牙设备界面-->
+    <string name="bt_set_name_null_prompt">输入内容不能为空</string>
+    <string name="bt_unknown_device">未知设备</string>
+    <string name="bt_set_radiogroup_available_text">可用设备</string>
+    <string name="bt_set_radiogroup_pair_text">已配对设备</string>
+    <string name="bt_set_cur_pair_device">""</string>
+    <string name="bt_set_bt_switch_text">蓝牙开关</string>
+    <string name="bt_set_bt_name_hint">本机名称</string>
+    <string name="bt_set_bt_name_show">EV400</string>
+    <string name="bt_bt_device_status_not_onnected">未连接</string>
+    <string name="bt_bt_device_status_connecting">连接中</string>
+    <string name="bt_bt_pair_device_status_connected">已连接</string>
+    <string name="bt_bt_pair_device_status_paired">已配对</string>
+    <string name="bt_bt_set_name_prompt">输入内如不能为空</string>
+    <string name="bt_bt_swtich_oning">蓝牙打开中...</string>
+    <string name="bt_bt_swtich_offing">蓝牙关闭中...</string>
+    <string name="bt_bt_available_device_list_status_refresh">搜索</string>
+    <string name="bt_bt_available_device_list_status_scaning">搜索中...</string>
+    <string name="bt_bt_available_device_list_status_hint">请先打开蓝牙开关</string>
+    <string name="bt_set_available_device_status">iPhoneX</string>
+    <string name="bt_contacts_sync_loading_status">正在同步中</string>
+    <string name="bt_contacts_sync_loaded_status">同步完成</string>
+    <string name="bt_set_connection_device_hint">是否需要连接蓝牙设备?</string>
+    <string name="bt_set_disconnect_device_hint">是否需要断开已连接的蓝牙设备?</string>
+    <string name="bt_set_remove_device_hint">是否删除已配对蓝牙设备?</string>
+    <string name="bt_call_unknown_number_hint">未知号码</string>
+    <string name="bt_set_bt_name_dialog_hint">名称</string>
+    <string name="bt_set_bluetooth_pairing_request">蓝牙配对请求</string>
+    <string name="bt_set_bt_pairing_code">配对码:</string>
+    <string name="bt_call_status_1">来电...</string>
+    <string name="bt_call_status_2">正在呼叫...</string>
+    <string name="bt_pbap_conn_success">读取联系人权限已成功获取!可以下载联系人!</string>
+    <string name="bt_pbap_downloading_calllog">正在同步通话记录，请稍候再试</string>
+    <string name="bt_pbap_conn_prompt">请先确保设备已获取读取联系人权限!或移除当前设备重新连接!</string>
+    <string name="bt_contact_numbertype_1">手机:</string>
+    <string name="bt_contact_numbertype_2">工作:</string>
+    <string name="bt_contact_numbertype_3">家庭:</string>
+    <string name="bt_contact_numbertype_4">其他:</string>
+    <string name="bt_dialog_cancel_button">取消</string>
+    <string name="bt_dialog_ok_button">确定</string>
+    <string name="bt_dialog_name_hint">名称:</string>
+
+    <string name="bt_hide_keyboard">隐藏</string>
+
+    <string name="float_window_tip_touch_back_bt">轻触返回通话&#160;&#160;&#160;</string>
+
+</resources>

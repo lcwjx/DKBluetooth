@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.jsbd.btphone"
+    android:sharedUserId="android.uid.system">
+
+    <!-- 权限 -->
+    <!-- 允许程序进行发现和配对新的蓝牙设备 -->
+    <uses-permission
+        android:name="android.permission.BLUETOOTH_ADMIN"
+        android:protectionLevel="development" />
+
+    <!-- 允许程序连接配对过的蓝牙设备 -->
+    <uses-permission
+        android:name="android.permission.BLUETOOTH"
+        android:protectionLevel="development" />
+
+    <!-- 读写手机状态和身份 -->
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE"
+        android:protectionLevel="development" />
+
+    <!-- 允许应用访问联系人通讯录信息 -->
+    <uses-permission
+        android:name="android.permission.READ_CONTACTS"
+        android:protectionLevel="development" />
+
+    <!-- 写入联系人，但不可读取 -->
+    <uses-permission
+        android:name="android.permission.WRITE_CONTACTS"
+        android:protectionLevel="development" />
+
+    <!-- 读取通话记录 -->
+    <uses-permission
+        android:name="android.permission.READ_CALL_LOG"
+        android:protectionLevel="development" />
+
+    <!-- 读取通话记录 -->
+    <uses-permission
+        android:name="android.permission.WRITE_CALL_LOG"
+        android:protectionLevel="development" />
+
+    <!-- 允许读写系统设置项 -->
+    <uses-permission
+        android:name="android.permission.WRITE_SETTINGS"
+        android:protectionLevel="development" />
+
+    <!-- 允许程序开机自动运行 -->
+    <uses-permission
+        android:name="android.permission.RECEIVE_BOOT_COMPLETED"
+        android:protectionLevel="development" />
+
+    <!-- 允许振动 -->
+    <uses-permission
+        android:name="android.permission.VIBRATE"
+        android:protectionLevel="development" />
+
+    <!-- 允许程序在手机屏幕关闭后后台进程仍然运行 -->
+    <uses-permission
+        android:name="android.permission.WAKE_LOCK"
+        android:protectionLevel="development" />
+
+    <!-- 拨打电话 -->
+    <uses-permission
+        android:name="android.permission.CALL_PHONE"
+        android:protectionLevel="development" />
+
+    <!-- 允许程序监视，修改或放弃播出电话 -->
+    <uses-permission
+        android:name="android.permission.PROCESS_OUTGOING_CALLS"
+        android:protectionLevel="development" />
+
+    <uses-permission
+        android:name="android.permission.SYSTEM_ALERT_WINDOW"
+        android:protectionLevel="development" />
+
+    <uses-permission
+        android:name="android.permission.SYSTEM_OVERLAY_WINDOW"
+        android:protectionLevel="development" />
+
+    <uses-permission android:name="android.permission.BROADCAST_STICKY" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <uses-permission
+        android:name="android.permission.GET_TOP_ACTIVITY_INFO"
+        android:protectionLevel="development" />
+
+    <uses-permission
+        android:name="android.permission.REORDER_TASKS"
+        android:protectionLevel="development" />
+
+    <application
+        android:name=".config.MainApp"
+        android:icon="@mipmap/dk_phone_icon"
+        android:label="@string/app_name"
+        android:persistent="true"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:screenOrientation="landscape"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.AppStartLoad"
+        tools:replace="android:name">
+
+        <activity
+            android:name=".module.activity.MainActivity"
+            android:launchMode="singleTask"
+            android:windowSoftInputMode="stateHidden"
+            android:theme="@style/Theme.AppStartLoad">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".module.activity.CommunicationActivity"
+            android:launchMode="singleInstance"
+            android:theme="@style/Theme.AppStartLoad">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="com.jsbd.btservice.Action.InComing" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".module.activity.PairedDevicesActivity"/>
+
+        <!--android:process=":remote"-->
+        <service
+            android:name=".service.CommunicationService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="com.jsbd.btphone.CommunicationService.Action" />
+            </intent-filter>
+        </service>
+
+        <receiver android:name=".receiver.MediaButtonReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.MEDIA_BUTTON" />
+            </intent-filter>
+        </receiver>
+    </application>
+</manifest>

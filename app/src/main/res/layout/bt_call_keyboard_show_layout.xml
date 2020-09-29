@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/px_1120"
+    android:layout_height="@dimen/px_648"
+    android:layout_marginTop="34px"
+    android:paddingLeft="@dimen/px_80"
+    android:paddingRight="@dimen/px_88">
+
+    <ImageView
+        android:id="@+id/keyboard_key_one"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:clickable="true"
+        android:src="@drawable/bt_key_one_image"
+        android:tag="1"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/keyboard_key_two"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_54"
+        android:clickable="true"
+        android:src="@drawable/bt_key_two_image"
+        android:tag="2"
+        app:layout_constraintLeft_toRightOf="@id/keyboard_key_one"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/keyboard_key_three"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_56"
+        android:clickable="true"
+        android:src="@drawable/bt_key_three_image"
+        android:tag="3"
+        app:layout_constraintLeft_toRightOf="@id/keyboard_key_two"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/keyboard_key_four"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginTop="@dimen/px_36"
+        android:clickable="true"
+        android:src="@drawable/bt_key_four_image"
+        android:tag="4"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_key_one" />
+
+    <ImageView
+        android:id="@+id/keyboard_key_five"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_54"
+        android:layout_marginTop="@dimen/px_36"
+        android:clickable="true"
+        android:src="@drawable/bt_key_five_image"
+        android:tag="5"
+        app:layout_constraintLeft_toRightOf="@id/keyboard_key_four"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_key_two" />
+
+    <ImageView
+        android:id="@+id/keyboard_key_six"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_56"
+        android:layout_marginTop="@dimen/px_36"
+        android:clickable="true"
+        android:src="@drawable/bt_key_six_image"
+        android:tag="6"
+        app:layout_constraintLeft_toRightOf="@id/keyboard_key_five"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_key_three" />
+
+    <ImageView
+        android:id="@+id/keyboard_key_seven"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginTop="@dimen/px_36"
+        android:clickable="true"
+        android:src="@drawable/bt_key_seven_image"
+        android:tag="7"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_key_four" />
+
+    <ImageView
+        android:id="@+id/keyboard_key_eight"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_54"
+        android:layout_marginTop="@dimen/px_36"
+        android:clickable="true"
+        android:src="@drawable/bt_key_eight_image"
+        android:tag="8"
+        app:layout_constraintLeft_toRightOf="@id/keyboard_key_seven"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_key_five" />
+
+    <ImageView
+        android:id="@+id/keyboard_key_nine"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_56"
+        android:layout_marginTop="@dimen/px_36"
+        android:clickable="true"
+        android:src="@drawable/bt_key_nine_image"
+        android:tag="9"
+        app:layout_constraintLeft_toRightOf="@id/keyboard_key_eight"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_key_six" />
+
+    <ImageView
+        android:id="@+id/keyboard_key_star"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginTop="@dimen/px_36"
+        android:clickable="true"
+        android:src="@drawable/bt_key_star_image"
+        android:tag="*"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_key_seven" />
+
+    <ImageView
+        android:id="@+id/keyboard_key_zero"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_54"
+        android:layout_marginTop="@dimen/px_36"
+        android:clickable="true"
+        android:src="@drawable/bt_key_zero_image"
+        android:tag="0"
+        app:layout_constraintLeft_toRightOf="@id/keyboard_key_star"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_key_nine" />
+
+    <ImageView
+        android:id="@+id/keyboard_key_pound"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_56"
+        android:layout_marginTop="@dimen/px_36"
+        android:clickable="true"
+        android:src="@drawable/bt_key_pound_image"
+        android:tag="#"
+        app:layout_constraintLeft_toRightOf="@id/keyboard_key_zero"
+        app:layout_constraintTop_toBottomOf="@id/keyboard_key_nine" />
+
+    <ImageView
+        android:id="@+id/keyboard_iv_delete"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_56"
+        android:layout_marginRight="@dimen/px_64"
+        android:layout_marginTop="@dimen/px_78"
+        android:clickable="false"
+        android:focusable="false"
+        android:src="@mipmap/bt_key_delete_disable_image"
+        app:layout_constraintLeft_toRightOf="@id/keyboard_key_three"
+        app:layout_constraintRight_toLeftOf="@id/keyboard_tv_telephone_number"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/keyboard_iv_hangup"
+        android:layout_width="@dimen/px_80"
+        android:layout_height="@dimen/px_80"
+        android:layout_marginLeft="@dimen/px_56"
+        android:layout_marginRight="@dimen/px_68"
+        android:layout_marginTop="@dimen/px_98"
+        android:clickable="true"
+        android:src="@drawable/bt_call_show_key_hangup_image"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintLeft_toRightOf="@id/keyboard_key_three"
+        app:layout_constraintRight_toLeftOf="@id/keyboard_tv_telephone_number"
+        app:layout_constraintTop_toBottomOf="@+id/keyboard_iv_delete" />
+
+    <TextView
+        android:id="@+id/keyboard_tv_telephone_number"
+        android:layout_width="@dimen/px_411"
+        android:layout_height="@dimen/px_76"
+        android:background="@mipmap/telephone_number_bottom_image"
+        android:ellipsize="start"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:inputType="phone"
+        android:singleLine="true"
+        android:textAppearance="?android:textAppearanceLarge"
+        android:textColor="@android:color/white"
+        android:textSize="@dimen/bt_font_size_3"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/keyboard_iv_hide"
+        android:layout_width="@dimen/px_120"
+        android:layout_height="@dimen/px_120"
+        android:layout_marginTop="12px"
+        android:gravity="center"
+        android:clickable="true"
+        android:background="@drawable/bt_call_show_key_hide_image"
+        android:text="@string/bt_hide_keyboard"
+        android:textSize="@dimen/px_27"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/keyboard_key_pound" />
+
+</android.support.constraint.ConstraintLayout>

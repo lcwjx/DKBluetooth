@@ -1,0 +1,70 @@
+apply plugin: 'com.android.application'
+
+
+android {
+    compileSdkVersion 25
+    defaultConfig {
+        applicationId "com.jsbd.btphone"
+        minSdkVersion 23
+        targetSdkVersion 25
+//        multiDexEnabled true
+        versionCode getSelfDefinedVersion("code")
+        versionName("5.4." + getSelfDefinedVersion("name"))
+    }
+
+    signingConfigs {
+        myConfig {
+            storeFile file("dk.keystore")
+            storePassword "android"
+            keyAlias "androiddebugkey"
+            keyPassword "android"
+            v2SigningEnabled false
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.myConfig
+        }
+
+        release {
+            signingConfig signingConfigs.myConfig
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        // Or, if you prefer, you can continue to check for errors in release builds,
+        // but continue the build even when errors are found:
+        abortOnError false
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:appcompat-v7:25.1.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+//    implementation 'com.jsbd.btservice:bluetooth-library:1.0.1'
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:1.5'
+    releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+    testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
+
+    implementation 'com.jsbd.support:bluetooth:0.0.20@aar'
+
+}
+
+def static getSelfDefinedVersion(type) {
+    Date date = new Date()
+    String dateString = date.format("yyyyMMddHH", TimeZone.getTimeZone("GMT+08:00"))
+    if ("code".equals(type)) {
+        return dateString.toInteger()
+    } else if ("name".equals(type)) {
+        Process process = "git describe --always".execute()
+        process.waitFor()
+        String sha1 = process.getText().trim()
+        return "$dateString.$sha1"
+    }
+}

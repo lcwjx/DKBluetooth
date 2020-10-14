@@ -28,7 +28,7 @@
 -keep public class * extends com.jsbd.btservice.model.GsonBean
 
 #-------------------------------------------------------------------------
--keep class com.jsbd.btservice.config.BTConfig {*; }
+-keep class com.jsbd.btservice.config.BluetoothConstants {*; }
 
 -keep class com.jsbd.btservice.observer.extral** {*;}
 -keep class com.jsbd.btservice.callback.** {*;}

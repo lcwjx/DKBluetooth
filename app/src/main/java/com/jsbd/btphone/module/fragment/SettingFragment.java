@@ -25,12 +25,12 @@ import com.jsbd.btphone.module.base.LazyBaseFragment;
 import com.jsbd.btphone.module.view.SwitchButton;
 import com.jsbd.btphone.util.DBBtUtil;
 import com.jsbd.btphone.util.LimitLengthFilter;
-import com.jsbd.btservice.Device;
-import com.jsbd.btservice.HandsetCall;
-import com.jsbd.btservice.constant.BTConfig;
+import com.jsbd.btservice.bean.Device;
+import com.jsbd.btservice.bean.HandsetCall;
 import com.jsbd.support.bluetooth.BTController;
 import com.jsbd.support.bluetooth.callback.IGapCallback;
 import com.jsbd.support.bluetooth.callback.IHfpCallback;
+import com.jsbd.support.bluetooth.constant.BluetoothConstants;
 import com.jsbd.support.bluetooth.utils.LogUtils;
 import com.jsbd.support.bluetooth.utils.TextUtil;
 
@@ -113,11 +113,11 @@ public class SettingFragment extends LazyBaseFragment {
             }
 
             @Override
-            public void onBondStateChanged(String address, int state) {
-                LogUtils.d(TAG, "SettingFragment >> onBondStateChanged >>  address:  " + address +
-                        " state:" + state);
+            public void onBondStateChanged(Device device, int state) {
+                LogUtils.d(TAG, "SettingFragment >> onBondStateChanged >> state:" + state);
                 BTController.getInstance().requestAllDevices();
             }
+
 
             @Override
             public void onBondedDevices(List<Device> list) {
@@ -182,8 +182,8 @@ public class SettingFragment extends LazyBaseFragment {
     private void updatePowerState(int state) {
         LogUtils.d(TAG, "SettingFragment >> updatePowerState >> state:" + state);
         switch (state) {
-            case BTConfig.STATE_ON://ON
-                BTController.getInstance().setScanFilterType(BTConfig.SCAN_FILTER_PHONE);//设置可搜索设备类型
+            case BluetoothConstants.STATE_ON://ON
+                BTController.getInstance().setScanFilterType(BluetoothConstants.SCAN_FILTER_PHONE);//设置可搜索设备类型
                 mBtnBtPowerSwitch.setSwitch0n();
                 mLayoutBtPairDevice.setVisibility(View.VISIBLE);
                 mLayoutBtAvailableDevice.setVisibility(View.VISIBLE);
@@ -192,7 +192,7 @@ public class SettingFragment extends LazyBaseFragment {
                 mTvBtAvailableDeviceListStatus.setText(R.string.bt_bt_available_device_list_status_refresh);
                 mLayoutBtAvailableDevice.setClickable(true);
                 break;
-            case BTConfig.STATE_OFF://OFF
+            case BluetoothConstants.STATE_OFF://OFF
                 mBtnBtPowerSwitch.setSwitchOff();
                 mTvCurPairDevice.setText("");
                 //mTvBtAvailableDeviceListStatus.setTextColor(getResources().getColor(R.color.bt_set_available_device_item_a50_stytle));
@@ -203,11 +203,11 @@ public class SettingFragment extends LazyBaseFragment {
                 mLayoutBtPairDevice.setVisibility(View.GONE);
                 mLayoutBtAvailableDevice.setVisibility(View.GONE);
                 break;
-            case BTConfig.STATE_TURNING_ON://ONING
+            case BluetoothConstants.STATE_TURNING_ON://ONING
                 mTvBtAvailableDeviceListStatus.setText(R.string.bt_bt_swtich_oning);
                 mTvBtAvailableDeviceListStatus.setBackgroundColor(Color.TRANSPARENT);
                 break;
-            case BTConfig.STATE_TURNING_OFF://OFFING
+            case BluetoothConstants.STATE_TURNING_OFF://OFFING
                 mTvBtAvailableDeviceListStatus.setBackgroundColor(Color.TRANSPARENT);
                 mTvBtAvailableDeviceListStatus.setText(R.string.bt_bt_swtich_offing);
                 break;
@@ -216,7 +216,7 @@ public class SettingFragment extends LazyBaseFragment {
 
     private void updateConnectInfo(int curState, Device device) {
         switch (curState) {
-            case BTConfig.CONNECT_STATE_CONNECTED:
+            case BluetoothConstants.CONNECT_STATE_CONNECTED:
                 mTvCurPairDevice.setVisibility(View.VISIBLE);
                 mIvDeviceConnPicture.setVisibility(View.VISIBLE);
                 if (device != null) {
@@ -225,9 +225,9 @@ public class SettingFragment extends LazyBaseFragment {
                     mTvCurPairDevice.setText(R.string.bt_unknown_device);
                 }
                 break;
-            case BTConfig.CONNECT_STATE_CONNECTING:
-            case BTConfig.CONNECT_STATE_DISCONNECTED:
-            case BTConfig.CONNECT_STATE_DISCONNECTING:
+            case BluetoothConstants.CONNECT_STATE_CONNECTING:
+            case BluetoothConstants.CONNECT_STATE_DISCONNECTED:
+            case BluetoothConstants.CONNECT_STATE_DISCONNECTING:
                 mTvCurPairDevice.setText("");
                 mIvDeviceConnPicture.setVisibility(View.GONE);
                 mTvCurPairDevice.setVisibility(View.GONE);
@@ -488,7 +488,7 @@ public class SettingFragment extends LazyBaseFragment {
             if (dataList != null && dataList.size() > 0) {
                 for (Device device : dataList) {
                     if (!device.isConnected()) {
-                        if (device.getBondState() == BTConfig.BOND_STATE_BONDING || device.isBonded()) {
+                        if (device.getBondState() == BluetoothConstants.BOND_STATE_BONDING || device.isBonded()) {
                             mDataList.add(0, device);
                         } else {
                             mDataList.add(device);
@@ -560,13 +560,13 @@ public class SettingFragment extends LazyBaseFragment {
                 viewHolder.tvStatus.setText(R.string.bt_bt_pair_device_status_connected);
                 viewHolder.ivDevice.setSelected(true);
 
-            } else if (dev.getBondState() == BTConfig.BOND_STATE_BONDED) {
+            } else if (dev.getBondState() == BluetoothConstants.BOND_STATE_BONDED) {
                 viewHolder.tvName.setTextColor(getResources().getColor(R.color.bt_set_available_device_item_a50_stytle));
                 viewHolder.tvStatus.setTextColor(getResources().getColor(R.color.bt_set_available_device_item_a50_stytle));
                 viewHolder.tvStatus.setText(R.string.bt_bt_pair_device_status_paired);
                 viewHolder.ivDevice.setSelected(false);
 
-            } else if (dev.getBondState() == BTConfig.BOND_STATE_BONDING) {
+            } else if (dev.getBondState() == BluetoothConstants.BOND_STATE_BONDING) {
                 viewHolder.tvName.setTextColor(getResources().getColor(R.color.bt_font_stytle_one));
                 viewHolder.tvStatus.setTextColor(getResources().getColor(R.color.bt_font_stytle_one));
                 viewHolder.tvStatus.setText(R.string.bt_bt_device_status_connecting);

@@ -14,14 +14,14 @@ import android.widget.TextView;
 import com.jsbd.btphone.R;
 import com.jsbd.btphone.module.base.LazyBaseFragment;
 import com.jsbd.btphone.util.DBBtUtil;
-import com.jsbd.btservice.CallLog;
-import com.jsbd.btservice.Contact;
-import com.jsbd.btservice.Device;
-import com.jsbd.btservice.HandsetCall;
-import com.jsbd.btservice.constant.BTConfig;
+import com.jsbd.btservice.bean.CallLog;
+import com.jsbd.btservice.bean.Contact;
+import com.jsbd.btservice.bean.Device;
+import com.jsbd.btservice.bean.HandsetCall;
 import com.jsbd.support.bluetooth.BTController;
 import com.jsbd.support.bluetooth.callback.IHfpCallback;
 import com.jsbd.support.bluetooth.callback.IPbapCallback;
+import com.jsbd.support.bluetooth.constant.BluetoothConstants;
 import com.jsbd.support.bluetooth.utils.LogUtils;
 import com.jsbd.support.bluetooth.utils.TextUtil;
 
@@ -79,10 +79,10 @@ public class CallLogFragment extends LazyBaseFragment {
             }
 
             @Override
-            public void onSyncStateChanged(int syncState) {
+            public void onSyncStateChanged(int syncState, int syncType) {
                 LogUtils.d(TAG, "CallLogFragment >> onSyncStateChanged >> syncState:" + syncState + ",getSyncType:" + BTController.getInstance().getSyncType());
-                if (syncState == BTConfig.SYNC_STATE_FINISHED) {
-                    if (BTController.getInstance().getSyncType() == BTConfig.SYNC_CALLLOG) {
+                if (syncState == BluetoothConstants.SYNC_STATE_FINISHED) {
+                    if (syncType == BluetoothConstants.SYNC_CALLLOG) {
                         mAdapterCallLog.setDataList(BTController.getInstance().getCallLogList());
                     }
                 }
@@ -124,7 +124,7 @@ public class CallLogFragment extends LazyBaseFragment {
             @Override
             public void onConnectStateChanged(int curState, int prevState, Device device) {
                 LogUtils.d(TAG, "CallLogFragment >> onConnectStateChanged >> curState:" + curState);
-                if (curState == BTConfig.CONNECT_STATE_CONNECTED) {
+                if (curState == BluetoothConstants.CONNECT_STATE_CONNECTED) {
                 }
             }
 
@@ -169,14 +169,14 @@ public class CallLogFragment extends LazyBaseFragment {
         super.onHiddenChanged(hidden);
         LogUtils.d(TAG, "CallLogFragment >> onHiddenChanged >> hidden:" + hidden);
         if (!hidden) {
-            if (BTController.getInstance().isSyncing() && BTController.getInstance().getSyncType() == BTConfig.SYNC_CALLLOG) {
+            if (BTController.getInstance().isSyncing() && BTController.getInstance().getSyncType() == BluetoothConstants.SYNC_CALLLOG) {
                 return;
             }
 
             mAdapterCallLog.setDataList(BTController.getInstance().getCallLogList());
             mLvCallLog.setSelection(0);
 
-            BTController.getInstance().startSync(BTConfig.SYNC_CALLLOG);
+            BTController.getInstance().startSync(BluetoothConstants.SYNC_CALLLOG);
         }
     }
 

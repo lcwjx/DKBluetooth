@@ -12,8 +12,8 @@ import android.view.View;
 
 import com.jsbd.btphone.R;
 import com.jsbd.btphone.config.WeakHandler;
-import com.jsbd.btservice.constant.BTConfig;
 import com.jsbd.support.bluetooth.BTController;
+import com.jsbd.support.bluetooth.constant.BluetoothConstants;
 
 /**
  * Created by QY on 2018/9/1.
@@ -150,7 +150,7 @@ public class SwitchButton extends View {
         //小圆的圆心x坐标一直在变化
         //L.d(TAG, "SwitchButton >> onMeasure >> getState:" + BTUtil.getState());
         /*在这里设置开关的初始状态*/
-        if (BTController.getInstance().getState() == BTConfig.STATE_OFF || BTController.getInstance().getState() == BTConfig.STATE_TURNING_OFF) {
+        if (BTController.getInstance().getState() == BluetoothConstants.STATE_OFF || BTController.getInstance().getState() == BluetoothConstants.STATE_TURNING_OFF) {
             smallCenter_x = center;
         } else {
             smallCenter_x = rec_x;

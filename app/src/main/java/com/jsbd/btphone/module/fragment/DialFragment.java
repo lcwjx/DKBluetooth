@@ -22,14 +22,14 @@ import com.jsbd.btphone.R;
 import com.jsbd.btphone.bean.ContactNumber;
 import com.jsbd.btphone.module.base.LazyBaseFragment;
 import com.jsbd.btphone.util.DBBtUtil;
-import com.jsbd.btservice.CallLog;
-import com.jsbd.btservice.Contact;
-import com.jsbd.btservice.Device;
-import com.jsbd.btservice.HandsetCall;
-import com.jsbd.btservice.constant.BTConfig;
+import com.jsbd.btservice.bean.CallLog;
+import com.jsbd.btservice.bean.Contact;
+import com.jsbd.btservice.bean.Device;
+import com.jsbd.btservice.bean.HandsetCall;
 import com.jsbd.support.bluetooth.BTController;
 import com.jsbd.support.bluetooth.callback.IHfpCallback;
 import com.jsbd.support.bluetooth.callback.IPbapCallback;
+import com.jsbd.support.bluetooth.constant.BluetoothConstants;
 import com.jsbd.support.bluetooth.utils.LogUtils;
 import com.jsbd.support.bluetooth.utils.TextUtil;
 
@@ -75,7 +75,7 @@ public class DialFragment extends LazyBaseFragment implements View.OnClickListen
 
             @Override
             public void onConnectStateChanged(int curState, int prevState, Device device) {
-                if (curState == BTConfig.CONNECT_STATE_DISCONNECTED) {
+                if (curState == BluetoothConstants.CONNECT_STATE_DISCONNECTED) {
                     mLastDialNumber = "";
                 }
             }
@@ -108,9 +108,10 @@ public class DialFragment extends LazyBaseFragment implements View.OnClickListen
             }
 
             @Override
-            public void onSyncStateChanged(int i) {
+            public void onSyncStateChanged(int i, int i1) {
 
             }
+
 
             @Override
             public void onContactItemCountDetermined(int i) {

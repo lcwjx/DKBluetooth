@@ -14,12 +14,11 @@ import com.jsbd.btphone.config.Config;
 import com.jsbd.btphone.config.MainApp;
 import com.jsbd.btphone.module.base.BaseActivity;
 import com.jsbd.btphone.util.DBBtUtil;
-import com.jsbd.btservice.Device;
-import com.jsbd.btservice.HandsetCall;
-import com.jsbd.btservice.IBTService;
-import com.jsbd.btservice.constant.BTConfig;
+import com.jsbd.btservice.bean.Device;
+import com.jsbd.btservice.bean.HandsetCall;
 import com.jsbd.support.bluetooth.BTController;
 import com.jsbd.support.bluetooth.callback.IHfpCallback;
+import com.jsbd.support.bluetooth.constant.BluetoothConstants;
 import com.jsbd.support.bluetooth.utils.LogUtils;
 import com.jsbd.support.bluetooth.utils.TextUtil;
 
@@ -141,7 +140,7 @@ public class CommunicationActivity extends BaseActivity implements View.OnClickL
             @Override
             public void onConnectStateChanged(int curState, int prevState, Device device) {
                 LogUtils.d(TAG, "CommunicationActivity >> onConnectStateChanged >> curState:" + curState);
-                if (curState != BTConfig.CONNECT_STATE_CONNECTED) {
+                if (curState != BluetoothConstants.CONNECT_STATE_CONNECTED) {
                     finish();
                 }
             }
@@ -160,16 +159,16 @@ public class CommunicationActivity extends BaseActivity implements View.OnClickL
                         + ",currCall=" + (currCall != null ? currCall.toString() : "")
                         + ",prevCall=" + (prevCall != null ? prevCall.toString() : ""));
 
-                if (state == BTConfig.CALL_STATE_INCOMING) {
+                if (state == BluetoothConstants.CALL_STATE_INCOMING) {
                     updateStateLayout(1, currCall);
-                } else if (state == BTConfig.CALL_STATE_ACTIVE || state == BTConfig.CALL_STATE_HELD) {
+                } else if (state == BluetoothConstants.CALL_STATE_ACTIVE || state == BluetoothConstants.CALL_STATE_HELD) {
                     updateStateLayout(3, currCall);
-                } else if (state == BTConfig.CALL_STATE_TERMINATED) {
+                } else if (state == BluetoothConstants.CALL_STATE_TERMINATED) {
                     LogUtils.d(TAG, "CommunicationActivity >> onCallChanged >> finish");
                     finish();
-                } else if (state == BTConfig.CALL_STATE_DIALING || state == BTConfig.CALL_STATE_ALERTING) {
+                } else if (state == BluetoothConstants.CALL_STATE_DIALING || state == BluetoothConstants.CALL_STATE_ALERTING) {
                     updateStateLayout(2, currCall);
-                } else if (state == BTConfig.CALL_STATE_WAITING) {
+                } else if (state == BluetoothConstants.CALL_STATE_WAITING) {
                     if (currCall != null) {
                         if (!currCall.isOutgoing()) {
                             updateStateLayout(1, currCall);
@@ -235,7 +234,7 @@ public class CommunicationActivity extends BaseActivity implements View.OnClickL
                     }
 
                     mTvInCallNumber2.setText(DBBtUtil.numberFormat(DBBtUtil.handleText(handsetCall.getNumber(), 15)));
-                    if (handsetCall.getState() == BTConfig.CALL_STATE_DIALING || handsetCall.getState() == BTConfig.CALL_STATE_ALERTING) {
+                    if (handsetCall.getState() == BluetoothConstants.CALL_STATE_DIALING || handsetCall.getState() == BluetoothConstants.CALL_STATE_ALERTING) {
                         mTvInCallDuration2.setText(R.string.bt_call_status_2);
                     } else {
                         mTvInCallDuration2.setText(handsetCall.getmHoldingTimeStr());
@@ -254,18 +253,18 @@ public class CommunicationActivity extends BaseActivity implements View.OnClickL
         /*在此处做判断当前是什么状态以便于显示相应界面*/
         HandsetCall currCall = BTController.getInstance().getInstance().getCurrentCall();
         switch (BTController.getInstance().getInstance().getCallState()) {
-            case BTConfig.CALL_STATE_INCOMING:
+            case BluetoothConstants.CALL_STATE_INCOMING:
                 updateStateLayout(1, currCall);
                 break;
-            case BTConfig.CALL_STATE_DIALING:
-            case BTConfig.CALL_STATE_ALERTING:
+            case BluetoothConstants.CALL_STATE_DIALING:
+            case BluetoothConstants.CALL_STATE_ALERTING:
                 updateStateLayout(2, currCall);
                 break;
-            case BTConfig.CALL_STATE_ACTIVE:
-            case BTConfig.CALL_STATE_HELD:
+            case BluetoothConstants.CALL_STATE_ACTIVE:
+            case BluetoothConstants.CALL_STATE_HELD:
                 updateStateLayout(3, currCall);
                 break;
-            case BTConfig.CALL_STATE_WAITING:
+            case BluetoothConstants.CALL_STATE_WAITING:
                 if (currCall != null) {
                     if (!currCall.isOutgoing()) {
                         updateStateLayout(1, currCall);

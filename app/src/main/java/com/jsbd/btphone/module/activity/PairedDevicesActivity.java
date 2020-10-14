@@ -17,12 +17,12 @@ import android.widget.TextView;
 
 import com.jsbd.btphone.R;
 import com.jsbd.btphone.util.DBBtUtil;
-import com.jsbd.btservice.Device;
-import com.jsbd.btservice.HandsetCall;
-import com.jsbd.btservice.constant.BTConfig;
+import com.jsbd.btservice.bean.Device;
+import com.jsbd.btservice.bean.HandsetCall;
 import com.jsbd.support.bluetooth.BTController;
 import com.jsbd.support.bluetooth.callback.IGapCallback;
 import com.jsbd.support.bluetooth.callback.IHfpCallback;
+import com.jsbd.support.bluetooth.constant.BluetoothConstants;
 import com.jsbd.support.bluetooth.utils.LogUtils;
 import com.jsbd.support.bluetooth.utils.TextUtil;
 
@@ -79,9 +79,8 @@ public class PairedDevicesActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onBondStateChanged(String address, int state) {
-                LogUtils.d(TAG, "PairedDevicesActivity >> onBondStateChanged >> address:" + address +
-                        "  state:" + state);
+            public void onBondStateChanged(Device device, int state) {
+                LogUtils.d(TAG, "PairedDevicesActivity >> onBondStateChanged >> state:" + state);
 //                mAdapterDevice.setDataList(BTController.getInstance().getBondedDevices());
                 BTController.getInstance().requestBondedDevices();
             }
@@ -167,9 +166,9 @@ public class PairedDevicesActivity extends AppCompatActivity {
 
     private void updatePowerState(int state) {
         switch (state) {
-            case BTConfig.STATE_OFF://OFF
-            case BTConfig.STATE_TURNING_ON://ONING
-            case BTConfig.STATE_TURNING_OFF://OFFING
+            case BluetoothConstants.STATE_OFF://OFF
+            case BluetoothConstants.STATE_TURNING_ON://ONING
+            case BluetoothConstants.STATE_TURNING_OFF://OFFING
                 finish();
                 break;
         }
@@ -371,7 +370,7 @@ public class PairedDevicesActivity extends AppCompatActivity {
                 viewHolder.tvStatus.setTextColor(getResources().getColor(R.color.bt_set_available_device_item_a50_stytle));
                 viewHolder.ivDelete.setVisibility(View.GONE);
 
-                if (dev.getBondState() == BTConfig.BOND_STATE_BONDED) {
+                if (dev.getBondState() == BluetoothConstants.BOND_STATE_BONDED) {
                     if (dev.isConnected()) {
                         viewHolder.ivDevice.setSelected(true);
                         viewHolder.tvName.setTextColor(getResources().getColor(R.color.bt_font_stytle_one));

@@ -20,11 +20,11 @@ import com.jsbd.btphone.config.Config;
 import com.jsbd.btphone.config.WeakHandler;
 import com.jsbd.btphone.module.activity.CommunicationActivity;
 import com.jsbd.btphone.receiver.MediaButtonReceiver;
-import com.jsbd.btservice.Device;
-import com.jsbd.btservice.HandsetCall;
-import com.jsbd.btservice.constant.BTConfig;
+import com.jsbd.btservice.bean.Device;
+import com.jsbd.btservice.bean.HandsetCall;
 import com.jsbd.support.bluetooth.BTController;
 import com.jsbd.support.bluetooth.callback.IHfpCallback;
+import com.jsbd.support.bluetooth.constant.BluetoothConstants;
 import com.jsbd.support.bluetooth.observer.HfpObserver;
 import com.jsbd.support.bluetooth.utils.LogUtils;
 import com.jsbd.support.bluetooth.utils.TextUtil;
@@ -75,7 +75,7 @@ public class CommunicationService extends Service {
             @Override
             public void onConnectStateChanged(int curState, int prevState, Device device) {
                 LogUtils.d(TAG, "CommunicationService >> onConnectStateChanged >> curState:" + curState);
-                if (curState != BTConfig.CONNECT_STATE_CONNECTED) {
+                if (curState != BluetoothConstants.CONNECT_STATE_CONNECTED) {
                     destroyFloatView(0);
                 }
             }
@@ -93,7 +93,7 @@ public class CommunicationService extends Service {
             @Override
             public void onCallChanged(int state, HandsetCall currCall, HandsetCall prevCall) {
                 LogUtils.d(TAG, "CommunicationService >> onCallChanged:" + state);
-                if (state == BTConfig.CALL_STATE_TERMINATED || state == BTConfig.CALL_STATE_IDLE) {
+                if (state == BluetoothConstants.CALL_STATE_TERMINATED || state == BluetoothConstants.CALL_STATE_IDLE) {
                     handleDestroyFloatView();
                     stopSelf();
                 }

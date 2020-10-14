@@ -28,11 +28,11 @@ import com.jsbd.btphone.module.base.LazyBaseFragment;
 import com.jsbd.btphone.module.view.ProgressDialog;
 import com.jsbd.btphone.util.DBBtUtil;
 import com.jsbd.btphone.util.SoftInputUtil;
-import com.jsbd.btservice.CallLog;
-import com.jsbd.btservice.Contact;
-import com.jsbd.btservice.constant.BTConfig;
+import com.jsbd.btservice.bean.CallLog;
+import com.jsbd.btservice.bean.Contact;
 import com.jsbd.support.bluetooth.BTController;
 import com.jsbd.support.bluetooth.callback.IPbapCallback;
+import com.jsbd.support.bluetooth.constant.BluetoothConstants;
 import com.jsbd.support.bluetooth.utils.LogUtils;
 import com.jsbd.support.bluetooth.utils.TextUtil;
 
@@ -143,10 +143,10 @@ public class ContactsFragment extends LazyBaseFragment {
             public void onClick(View view) {
                 LogUtils.d(TAG, "ContactsFragment >> BtnSync OnClick");
                 if (BTController.getInstance().isPbapConnected()) {
-                    if (BTController.getInstance().startSync(BTConfig.SYNC_CONTACT)) {
+                    if (BTController.getInstance().startSync(BluetoothConstants.SYNC_CONTACT)) {
                         startProgressDialog();
                     } else {
-                        if (BTController.getInstance().getSyncType() == BTConfig.SYNC_CALLLOG && BTController.getInstance().isSyncing())
+                        if (BTController.getInstance().getSyncType() == BluetoothConstants.SYNC_CALLLOG && BTController.getInstance().isSyncing())
                             createTipDialog(getResources().getString(R.string.bt_pbap_downloading_calllog));
                     }
                 } else {
@@ -204,18 +204,18 @@ public class ContactsFragment extends LazyBaseFragment {
             }
 
             @Override
-            public void onSyncStateChanged(int syncState) {
+            public void onSyncStateChanged(int syncState, int syncType) {
                 LogUtils.d(TAG, "ContactsFragment >> onSyncStateChanged state:" + syncState + ",syncType:" + BTController.getInstance().getSyncType());
-                if (syncState == BTConfig.SYNC_STATE_STARTED) {
-                    if (BTController.getInstance().getSyncType() == BTConfig.SYNC_CONTACT) {
+                if (syncState == BluetoothConstants.SYNC_STATE_STARTED) {
+                    if (syncType == BluetoothConstants.SYNC_CONTACT) {
                         LogUtils.d(TAG, "ContactsFragment >> onSyncStateChanged SYNC_STATE_STARTED");
                         if (isShowing()) {
                             startProgressDialog();
                         }
                         mAdapterContact.clearList();
                     }
-                } else if (syncState == BTConfig.SYNC_STATE_FINISHED) {
-                    if (BTController.getInstance().getSyncType() == BTConfig.SYNC_CONTACT) {
+                } else if (syncState == BluetoothConstants.SYNC_STATE_FINISHED) {
+                    if (syncType == BluetoothConstants.SYNC_CONTACT) {
                         LogUtils.d(TAG, "ContactsFragment >> onSyncStateChanged SYNC_STATE_FINISHED");
                         mAdapterContact.setDataList(BTController.getInstance().getContactList());
                         finishProgressDialog();
@@ -347,7 +347,7 @@ public class ContactsFragment extends LazyBaseFragment {
         super.onHiddenChanged(hidden);
         LogUtils.d(TAG, "ContactsFragment >> onHiddenChanged >> hidden:" + hidden);
         if (!hidden) {
-            if (BTController.getInstance().getSyncType() == BTConfig.SYNC_CONTACT && BTController.getInstance().isSyncing()) {
+            if (BTController.getInstance().getSyncType() == BluetoothConstants.SYNC_CONTACT && BTController.getInstance().isSyncing()) {
                 startProgressDialog();
             } else {
                 if (TextUtil.isEmpty(mEdtSearch.getText().toString())) {

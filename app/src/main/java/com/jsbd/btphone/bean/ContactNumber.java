@@ -1,6 +1,6 @@
 package com.jsbd.btphone.bean;
 
-import com.jsbd.btservice.Contact;
+import com.jsbd.btservice.bean.Contact;
 
 /**
  * Created by qy128 on 2018/11/9.

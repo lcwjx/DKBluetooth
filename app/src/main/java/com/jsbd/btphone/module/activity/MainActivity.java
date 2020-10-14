@@ -24,11 +24,11 @@ import com.jsbd.btphone.module.fragment.DialFragment;
 import com.jsbd.btphone.module.fragment.SettingFragment;
 import com.jsbd.btphone.module.view.NoScrollViewPager;
 import com.jsbd.btphone.util.PermissionRequestUtils;
-import com.jsbd.btservice.Device;
-import com.jsbd.btservice.HandsetCall;
-import com.jsbd.btservice.constant.BTConfig;
+import com.jsbd.btservice.bean.Device;
+import com.jsbd.btservice.bean.HandsetCall;
 import com.jsbd.support.bluetooth.BTController;
 import com.jsbd.support.bluetooth.callback.IHfpCallback;
+import com.jsbd.support.bluetooth.constant.BluetoothConstants;
 import com.jsbd.support.bluetooth.observer.HfpObserver;
 import com.jsbd.support.bluetooth.utils.LogUtils;
 
@@ -192,7 +192,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
         if (BTController.getInstance().isBindService()) {
 
             getLocalVersionName();
-            updatePowerState(BTController.getInstance().getConnectState() == BTConfig.CONNECT_STATE_CONNECTED);
+            updatePowerState(BTController.getInstance().getConnectState() == BluetoothConstants.CONNECT_STATE_CONNECTED);
             updateConnectState(BTController.getInstance().getConnectState(), BTController.getInstance().getCurRemoteDevice());
 
             LogUtils.d(TAG, "MainActivity >> bindToService >> isCalling:" + BTController.getInstance().isCalling() + ",state:" + BTController.getInstance().getState());
@@ -287,12 +287,12 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
 
     private void updateConnectState(int curState, Device device) {
         switch (curState) {
-            case BTConfig.CONNECT_STATE_CONNECTED:
+            case BluetoothConstants.CONNECT_STATE_CONNECTED:
                 updatePowerState(true);
                 break;
-            case BTConfig.CONNECT_STATE_CONNECTING:
-            case BTConfig.CONNECT_STATE_DISCONNECTED:
-            case BTConfig.CONNECT_STATE_DISCONNECTING:
+            case BluetoothConstants.CONNECT_STATE_CONNECTING:
+            case BluetoothConstants.CONNECT_STATE_DISCONNECTED:
+            case BluetoothConstants.CONNECT_STATE_DISCONNECTING:
                 updatePowerState(false);
                 break;
         }

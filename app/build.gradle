@@ -52,7 +52,7 @@ dependencies {
     releaseImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
     testImplementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.5'
 
-    implementation 'com.jsbd.support:bluetooth:0.0.23@aar'
+    implementation 'com.jsbd.support:bluetooth:0.0.27@aar'
 
 }
 

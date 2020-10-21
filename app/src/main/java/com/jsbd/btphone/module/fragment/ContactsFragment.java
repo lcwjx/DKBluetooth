@@ -113,7 +113,7 @@ public class ContactsFragment extends LazyBaseFragment {
                 String text = s.toString();
                 String number = text.replace(" ", "");
                 if (TextUtil.isEmpty(number)) {
-                    mAdapterContact.setDataList(BTController.getInstance().getContactList());
+                    BTController.getInstance().requestContactList();
                 } else {
                     BTController.getInstance().queryContactsByCondition(number);
                 }
@@ -217,7 +217,7 @@ public class ContactsFragment extends LazyBaseFragment {
                 } else if (syncState == BluetoothConstants.SYNC_STATE_FINISHED) {
                     if (syncType == BluetoothConstants.SYNC_CONTACT) {
                         LogUtils.d(TAG, "ContactsFragment >> onSyncStateChanged SYNC_STATE_FINISHED");
-                        mAdapterContact.setDataList(BTController.getInstance().getContactList());
+                        BTController.getInstance().requestContactList();
                         finishProgressDialog();
                     }
                 }
@@ -256,7 +256,7 @@ public class ContactsFragment extends LazyBaseFragment {
     private void search() {
         String input = mEdtSearch.getText().toString().trim();
         if (TextUtil.isEmpty(input)) {
-            mAdapterContact.setDataList(BTController.getInstance().getContactList());
+            BTController.getInstance().requestContactList();
         } else {
             BTController.getInstance().queryContactsByCondition(input);
         }
@@ -351,7 +351,7 @@ public class ContactsFragment extends LazyBaseFragment {
                 startProgressDialog();
             } else {
                 if (TextUtil.isEmpty(mEdtSearch.getText().toString())) {
-                    mAdapterContact.setDataList(BTController.getInstance().getContactList());
+                    BTController.getInstance().requestContactList();
                 } else {
                     BTController.getInstance().queryContactsByCondition(mEdtSearch.getText().toString());
                 }

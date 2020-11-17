@@ -11,19 +11,19 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.jsbd.bluetooth.BTController;
+import com.jsbd.bluetooth.bean.CallLog;
+import com.jsbd.bluetooth.bean.Contact;
+import com.jsbd.bluetooth.bean.Device;
+import com.jsbd.bluetooth.bean.HandsetCall;
+import com.jsbd.bluetooth.callback.HfpCallback;
+import com.jsbd.bluetooth.callback.PbapCallback;
+import com.jsbd.bluetooth.constant.BluetoothConstants;
+import com.jsbd.bluetooth.utils.LogUtils;
+import com.jsbd.bluetooth.utils.TextUtil;
 import com.jsbd.btphone.R;
 import com.jsbd.btphone.module.base.LazyBaseFragment;
 import com.jsbd.btphone.util.DBBtUtil;
-import com.jsbd.btservice.bean.CallLog;
-import com.jsbd.btservice.bean.Contact;
-import com.jsbd.btservice.bean.Device;
-import com.jsbd.btservice.bean.HandsetCall;
-import com.jsbd.support.bluetooth.BTController;
-import com.jsbd.support.bluetooth.callback.IHfpCallback;
-import com.jsbd.support.bluetooth.callback.IPbapCallback;
-import com.jsbd.support.bluetooth.constant.BluetoothConstants;
-import com.jsbd.support.bluetooth.utils.LogUtils;
-import com.jsbd.support.bluetooth.utils.TextUtil;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -71,7 +71,7 @@ public class CallLogFragment extends LazyBaseFragment {
     }
 
     private void initData() {
-        BTController.getInstance().registerPbapCallback(hashCode(), new IPbapCallback() {
+        BTController.getInstance().registerPbapCallback(hashCode(), new PbapCallback() {
 
             @Override
             public void onPbapPowerStateChanged(boolean on) {
@@ -114,7 +114,7 @@ public class CallLogFragment extends LazyBaseFragment {
             }
         });
 
-        BTController.getInstance().registerHfpCallback(hashCode(), new IHfpCallback() {
+        BTController.getInstance().registerHfpCallback(hashCode(), new HfpCallback() {
 
             @Override
             public void onAudioStateChanged(int state) {

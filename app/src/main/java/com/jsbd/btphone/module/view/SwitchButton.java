@@ -10,10 +10,10 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
+import com.jsbd.bluetooth.BTController;
+import com.jsbd.bluetooth.constant.BluetoothConstants;
 import com.jsbd.btphone.R;
 import com.jsbd.btphone.config.WeakHandler;
-import com.jsbd.support.bluetooth.BTController;
-import com.jsbd.support.bluetooth.constant.BluetoothConstants;
 
 /**
  * Created by QY on 2018/9/1.

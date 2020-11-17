@@ -21,6 +21,13 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
 
+import com.jsbd.bluetooth.BTController;
+import com.jsbd.bluetooth.bean.CallLog;
+import com.jsbd.bluetooth.bean.Contact;
+import com.jsbd.bluetooth.callback.PbapCallback;
+import com.jsbd.bluetooth.constant.BluetoothConstants;
+import com.jsbd.bluetooth.utils.LogUtils;
+import com.jsbd.bluetooth.utils.TextUtil;
 import com.jsbd.btphone.R;
 import com.jsbd.btphone.bean.ContactNumber;
 import com.jsbd.btphone.config.WeakHandler;
@@ -28,13 +35,6 @@ import com.jsbd.btphone.module.base.LazyBaseFragment;
 import com.jsbd.btphone.module.view.ProgressDialog;
 import com.jsbd.btphone.util.DBBtUtil;
 import com.jsbd.btphone.util.SoftInputUtil;
-import com.jsbd.btservice.bean.CallLog;
-import com.jsbd.btservice.bean.Contact;
-import com.jsbd.support.bluetooth.BTController;
-import com.jsbd.support.bluetooth.callback.IPbapCallback;
-import com.jsbd.support.bluetooth.constant.BluetoothConstants;
-import com.jsbd.support.bluetooth.utils.LogUtils;
-import com.jsbd.support.bluetooth.utils.TextUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -191,7 +191,7 @@ public class ContactsFragment extends LazyBaseFragment {
 
         mIsNeedShowTipDlg = false;
 
-        BTController.getInstance().registerPbapCallback(hashCode(), new IPbapCallback() {
+        BTController.getInstance().registerPbapCallback(hashCode(), new PbapCallback() {
             @Override
             public void onPbapPowerStateChanged(boolean on) {
                 if (on) {

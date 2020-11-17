@@ -12,7 +12,7 @@ import android.text.TextUtils;
 import android.text.style.ForegroundColorSpan;
 
 
-import com.jsbd.support.bluetooth.utils.TextUtil;
+import com.jsbd.bluetooth.utils.TextUtil;
 
 import java.util.Collection;
 import java.util.List;

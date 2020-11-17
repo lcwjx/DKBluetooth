@@ -6,8 +6,7 @@ import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 
-
-import com.jsbd.support.bluetooth.utils.LogUtils;
+import com.jsbd.bluetooth.utils.LogUtils;
 
 import java.util.ArrayList;
 import java.util.List;

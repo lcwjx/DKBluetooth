@@ -14,6 +14,14 @@ import android.view.View;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import com.jsbd.bluetooth.BTController;
+import com.jsbd.bluetooth.bean.Device;
+import com.jsbd.bluetooth.bean.HandsetCall;
+import com.jsbd.bluetooth.callback.HfpCallback;
+import com.jsbd.bluetooth.callback.IHfpCallback;
+import com.jsbd.bluetooth.constant.BluetoothConstants;
+import com.jsbd.bluetooth.observer.HfpObserver;
+import com.jsbd.bluetooth.utils.LogUtils;
 import com.jsbd.btphone.R;
 import com.jsbd.btphone.config.Config;
 import com.jsbd.btphone.module.base.BaseActivity;
@@ -24,13 +32,6 @@ import com.jsbd.btphone.module.fragment.DialFragment;
 import com.jsbd.btphone.module.fragment.SettingFragment;
 import com.jsbd.btphone.module.view.NoScrollViewPager;
 import com.jsbd.btphone.util.PermissionRequestUtils;
-import com.jsbd.btservice.bean.Device;
-import com.jsbd.btservice.bean.HandsetCall;
-import com.jsbd.support.bluetooth.BTController;
-import com.jsbd.support.bluetooth.callback.IHfpCallback;
-import com.jsbd.support.bluetooth.constant.BluetoothConstants;
-import com.jsbd.support.bluetooth.observer.HfpObserver;
-import com.jsbd.support.bluetooth.utils.LogUtils;
 
 import java.lang.ref.WeakReference;
 import java.util.ArrayList;
@@ -203,7 +204,7 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
             }
         }
 
-        BTController.getInstance().registerHfpCallback(hashCode(), new IHfpCallback() {
+        BTController.getInstance().registerHfpCallback(hashCode(), new HfpCallback() {
             @Override
             public void onAudioStateChanged(int state) {
 

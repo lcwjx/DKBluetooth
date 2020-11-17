@@ -15,19 +15,19 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.TextView;
 
+import com.jsbd.bluetooth.BTController;
+import com.jsbd.bluetooth.bean.Device;
+import com.jsbd.bluetooth.bean.HandsetCall;
+import com.jsbd.bluetooth.callback.HfpCallback;
+import com.jsbd.bluetooth.constant.BluetoothConstants;
+import com.jsbd.bluetooth.observer.HfpObserver;
+import com.jsbd.bluetooth.utils.LogUtils;
+import com.jsbd.bluetooth.utils.TextUtil;
 import com.jsbd.btphone.R;
 import com.jsbd.btphone.config.Config;
 import com.jsbd.btphone.config.WeakHandler;
 import com.jsbd.btphone.module.activity.CommunicationActivity;
 import com.jsbd.btphone.receiver.MediaButtonReceiver;
-import com.jsbd.btservice.bean.Device;
-import com.jsbd.btservice.bean.HandsetCall;
-import com.jsbd.support.bluetooth.BTController;
-import com.jsbd.support.bluetooth.callback.IHfpCallback;
-import com.jsbd.support.bluetooth.constant.BluetoothConstants;
-import com.jsbd.support.bluetooth.observer.HfpObserver;
-import com.jsbd.support.bluetooth.utils.LogUtils;
-import com.jsbd.support.bluetooth.utils.TextUtil;
 
 /**
  * Created by wills on 2017/12/18.
@@ -65,7 +65,7 @@ public class CommunicationService extends Service {
     }
 
     private void registerReceivers() {
-        HfpObserver.getInstance().register(hashCode(), new IHfpCallback() {
+        HfpObserver.getInstance().register(hashCode(), new HfpCallback() {
 
             @Override
             public void onAudioStateChanged(int state) {

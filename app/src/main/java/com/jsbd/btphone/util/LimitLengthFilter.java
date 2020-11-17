@@ -4,8 +4,7 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.widget.EditText;
 
-
-import com.jsbd.support.bluetooth.utils.LogUtils;
+import com.jsbd.bluetooth.utils.LogUtils;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
 
-import com.jsbd.support.bluetooth.utils.LogUtils;
+import com.jsbd.bluetooth.utils.LogUtils;
 
 import java.util.ArrayList;
 import java.util.List;

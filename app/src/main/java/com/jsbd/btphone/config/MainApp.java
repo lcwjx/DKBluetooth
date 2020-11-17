@@ -6,8 +6,8 @@ import android.content.Context;
 import android.os.StrictMode;
 
 import com.jsbd.app.BDApplication;
-import com.jsbd.support.bluetooth.BTController;
-import com.jsbd.support.bluetooth.utils.LogUtils;
+import com.jsbd.bluetooth.BTController;
+import com.jsbd.bluetooth.utils.LogUtils;
 import com.squareup.leakcanary.LeakCanary;
 import com.squareup.leakcanary.RefWatcher;
 

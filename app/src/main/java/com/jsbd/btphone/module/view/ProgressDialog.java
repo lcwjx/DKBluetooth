@@ -11,9 +11,9 @@ import android.view.animation.LinearInterpolator;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.jsbd.bluetooth.utils.LogUtils;
 import com.jsbd.btphone.R;
 import com.jsbd.btphone.module.base.BaseDialog;
-import com.jsbd.support.bluetooth.utils.LogUtils;
 
 /**
  * Created by qy128 on 2018/10/27.

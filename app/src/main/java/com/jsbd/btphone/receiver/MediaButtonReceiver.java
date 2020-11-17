@@ -5,8 +5,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.view.KeyEvent;
 
+import com.jsbd.bluetooth.utils.LogUtils;
 import com.jsbd.btphone.config.Config;
-import com.jsbd.support.bluetooth.utils.LogUtils;
 
 /**
  * Created by wills on 2017/12/18.

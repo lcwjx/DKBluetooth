@@ -1,6 +1,7 @@
 package com.jsbd.btphone.bean;
 
-import com.jsbd.btservice.bean.Contact;
+
+import com.jsbd.bluetooth.bean.Contact;
 
 /**
  * Created by qy128 on 2018/11/9.

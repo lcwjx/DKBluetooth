@@ -139,13 +139,8 @@ public class CallLogFragment extends LazyBaseFragment {
             }
 
             @Override
-            public void onCallChanged(int state, HandsetCall currCall, HandsetCall prevCall) {
+            public void onCallChanged(int state, HandsetCall currCall) {
                 LogUtils.d(TAG, "CallLogFragment >> onCallChanged >>state:" + state);
-            }
-
-            @Override
-            public void onHoldingTimeChanged(int callId, int holdingTime, String holdingTimeStr) {
-
             }
         });
     }

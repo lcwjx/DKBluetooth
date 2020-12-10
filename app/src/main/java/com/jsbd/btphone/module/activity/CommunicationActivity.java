@@ -154,10 +154,9 @@ public class CommunicationActivity extends BaseActivity implements View.OnClickL
             }
 
             @Override
-            public void onCallChanged(int state, HandsetCall currCall, HandsetCall prevCall) {
+            public void onCallChanged(int state, HandsetCall currCall) {
                 LogUtils.d(TAG, "CommunicationActivity >> onCallChanged >> state:" + state
-                        + ",currCall=" + (currCall != null ? currCall.toString() : "")
-                        + ",prevCall=" + (prevCall != null ? prevCall.toString() : ""));
+                        + ",currCall=" + (currCall != null ? currCall.toString() : ""));
 
                 if (state == BluetoothConstants.CALL_STATE_INCOMING) {
                     updateStateLayout(1, currCall);
@@ -175,17 +174,6 @@ public class CommunicationActivity extends BaseActivity implements View.OnClickL
                         } else {
                             updateStateLayout(2, currCall);
                         }
-                    }
-                }
-            }
-
-            @Override
-            public void onHoldingTimeChanged(int callId, int holdingTime, String holdingTimeStr) {
-                LogUtils.d(TAG, "CommunicationActivity >> onHoldingTimeChanged >> callId:" + callId + ",holdingTime:" + holdingTime + ",str:" + holdingTimeStr);
-                HandsetCall currCall = BTController.getInstance().getInstance().getCurrentCall();
-                if (currCall != null && currCall.getId() == callId) {
-                    if (mTvInCallDuration2 != null) {
-                        mTvInCallDuration2.setText(holdingTimeStr);
                     }
                 }
             }
@@ -237,7 +225,7 @@ public class CommunicationActivity extends BaseActivity implements View.OnClickL
                     if (handsetCall.getState() == BluetoothConstants.CALL_STATE_DIALING || handsetCall.getState() == BluetoothConstants.CALL_STATE_ALERTING) {
                         mTvInCallDuration2.setText(R.string.bt_call_status_2);
                     } else {
-                        mTvInCallDuration2.setText(handsetCall.getmHoldingTimeStr());
+                        mTvInCallDuration2.setText("00:00:01");
                     }
                 }
                 break;

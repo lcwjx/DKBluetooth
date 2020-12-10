@@ -90,11 +90,6 @@ public class PairedDevicesActivity extends AppCompatActivity {
                 mAdapterDevice.setDataList(list);
             }
 
-            @Override
-            public void onAllDevices(List<Device> list) {
-
-            }
-
             /**
              * 显示配对码
              *
@@ -131,12 +126,7 @@ public class PairedDevicesActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onCallChanged(int state, HandsetCall currCall, HandsetCall prevCall) {
-
-            }
-
-            @Override
-            public void onHoldingTimeChanged(int callId, int holdingTime, String holdingTimeStr) {
+            public void onCallChanged(int state, HandsetCall currCall) {
 
             }
         });

@@ -226,13 +226,8 @@ public class MainActivity extends BaseActivity implements RadioGroup.OnCheckedCh
             }
 
             @Override
-            public void onCallChanged(int state, HandsetCall currCall, HandsetCall prevCall) {
+            public void onCallChanged(int state, HandsetCall currCall) {
                 LogUtils.d(TAG, "MainActivity >> onCallChanged:" + state);
-            }
-
-            @Override
-            public void onHoldingTimeChanged(int callId, int holdingTime, String holdingTimeStr) {
-
             }
         });
     }

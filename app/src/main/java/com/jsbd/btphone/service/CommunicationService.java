@@ -91,19 +91,11 @@ public class CommunicationService extends Service {
             }
 
             @Override
-            public void onCallChanged(int state, HandsetCall currCall, HandsetCall prevCall) {
+            public void onCallChanged(int state, HandsetCall currCall) {
                 LogUtils.d(TAG, "CommunicationService >> onCallChanged:" + state);
                 if (state == BluetoothConstants.CALL_STATE_TERMINATED || state == BluetoothConstants.CALL_STATE_IDLE) {
                     handleDestroyFloatView();
                     stopSelf();
-                }
-            }
-
-            @Override
-            public void onHoldingTimeChanged(int callId, int holdingTime, String holdingTimeStr) {
-                HandsetCall currCall = BTController.getInstance().getCurrentCall();
-                if (currCall != null && currCall.getId() == callId) {
-                    handleUpdateHoldingTime(holdingTimeStr);
                 }
             }
         });
@@ -275,7 +267,7 @@ public class CommunicationService extends Service {
 
                     HandsetCall currCall = BTController.getInstance().getCurrentCall();
                     if (currCall != null) {
-                        handleUpdateHoldingTime(currCall.getmHoldingTimeStr());
+                        handleUpdateHoldingTime("00:00:00");
                     }
                 } catch (Exception e) {
                     e.printStackTrace();

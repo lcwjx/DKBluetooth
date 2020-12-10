@@ -116,18 +116,13 @@ public class SettingFragment extends LazyBaseFragment {
             @Override
             public void onBondStateChanged(Device device, int state) {
                 LogUtils.d(TAG, "SettingFragment >> onBondStateChanged >> state:" + state);
-                BTController.getInstance().requestAllDevices();
+                mAdapterDevice.setDataList(BTController.getInstance().getAllDevices());
             }
 
 
             @Override
             public void onBondedDevices(List<Device> list) {
 
-            }
-
-            @Override
-            public void onAllDevices(List<Device> list) {
-                mAdapterDevice.setDataList(list);
             }
 
             /**
@@ -154,8 +149,7 @@ public class SettingFragment extends LazyBaseFragment {
             public void onConnectStateChanged(int curState, int prevState, Device device) {
                 LogUtils.d(TAG, "SettingFragment >> onConnectStateChanged >> curState:" + curState);
                 updateConnectInfo(curState, device);
-//                mAdapterDevice.setDataList(BTController.getInstance().getAllDevices());
-                BTController.getInstance().requestAllDevices();
+                mAdapterDevice.setDataList(BTController.getInstance().getAllDevices());
             }
 
             @Override
@@ -169,12 +163,7 @@ public class SettingFragment extends LazyBaseFragment {
             }
 
             @Override
-            public void onCallChanged(int state, HandsetCall currCall, HandsetCall prevCall) {
-
-            }
-
-            @Override
-            public void onHoldingTimeChanged(int callId, int holdingTime, String holdingTimeStr) {
+            public void onCallChanged(int state, HandsetCall currCall) {
 
             }
         });
@@ -323,8 +312,7 @@ public class SettingFragment extends LazyBaseFragment {
     public void onHiddenChanged(boolean hidden) {
         if (!hidden) {
             LogUtils.d(TAG, "SettingFragment >> onHiddenChanged >> show");
-//            mAdapterDevice.setDataList(BTController.getInstance().getAllDevices());
-            BTController.getInstance().requestAllDevices();
+            mAdapterDevice.setDataList(BTController.getInstance().getAllDevices());
             updateConnectInfo(BTController.getInstance().getConnectState(), BTController.getInstance().getCurRemoteDevice());
         } else {
             LogUtils.d(TAG, "SettingFragment >> onHiddenChanged >> hide");

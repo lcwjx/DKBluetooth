@@ -91,12 +91,7 @@ public class DialFragment extends LazyBaseFragment implements View.OnClickListen
             }
 
             @Override
-            public void onCallChanged(int state, HandsetCall currCall, HandsetCall prevCall) {
-
-            }
-
-            @Override
-            public void onHoldingTimeChanged(int id, int holdingTime, String holdingTimeStr) {
+            public void onCallChanged(int state, HandsetCall currCall) {
 
             }
         });

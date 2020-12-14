@@ -286,6 +286,7 @@ public class PairedDevicesActivity extends AppCompatActivity {
             if (dataList != null && dataList.size() > 0) {
                 mDataList.addAll(dataList);
             }
+
             notifyDataSetChanged();
             LogUtils.d(TAG, "PairedDevicesActivity >> DeviceAdapter >> setDataList >> size:" + mDataList.size());
         }
@@ -349,8 +350,8 @@ public class PairedDevicesActivity extends AppCompatActivity {
             }
 
             Device dev = (Device) getItem(position);
-            LogUtils.d(TAG, "PairedDevicesActivity >> DeviceAdapter >> getItem >> pos:" + position + ",dev:" + dev.toString());
             if (dev != null) {
+                LogUtils.d(TAG, "PairedDevicesActivity >> DeviceAdapter >> getItem >> pos:" + position + ",dev:" + dev.toString());
                 String name = dev.getName();
                 String address = dev.getAddress();
 

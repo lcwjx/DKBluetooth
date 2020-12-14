@@ -193,7 +193,7 @@ public class CallLogFragment extends LazyBaseFragment {
 
         public void setDataList(List<CallLog> callLogList) {
             mListCallLog.clear();
-            if (callLogList != null || callLogList.size() > 0) {
+            if (callLogList != null && callLogList.size() > 0) {
                 mListCallLog.addAll(callLogList);
             }
             notifyDataSetChanged();

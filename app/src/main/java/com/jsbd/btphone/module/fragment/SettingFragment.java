@@ -476,7 +476,7 @@ public class SettingFragment extends LazyBaseFragment {
             mDataList.clear();
             if (dataList != null && dataList.size() > 0) {
                 for (Device device : dataList) {
-                    if (!device.isConnected()) {
+                    if (device!=null && !device.isConnected()) {
                         if (device.getBondState() == BluetoothConstants.BOND_STATE_BONDING || device.isBonded()) {
                             mDataList.add(0, device);
                         } else {
